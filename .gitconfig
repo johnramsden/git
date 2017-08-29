@@ -2,52 +2,49 @@
 	name = John Ramsden
 	email = johnramsden@users.noreply.github.com
 	signingkey = 2E989DFAD8B09FD0
-	
+
 [core]
 	editor = nano
-	
+
 [alias]
-    hist = log --all --graph --decorate --oneline
+  hist = log --all --graph --decorate --oneline
 	undo-commit = reset --soft HEAD^
-	
+
 [credential]
 	helper = store
-	
+
 [commit]
 	gpgsign = true
   # "other people can trust that the changes you've made really were made by you"
   # https://help.github.com/articles/about-gpg/
   # https://git-scm.com/docs/git-config#git-config-commitgpgSign
-  
+
 [status]
   showUntrackedFiles = all
   # Sometimes a newly-added folder, since it's only one line in git status, can slip under the radar.
   # https://git-scm.com/docs/git-config#git-config-statusshowUntrackedFiles
-  
+
 [push]
 	default = simple
-	
+
 [diff]
 	tool = meld
-	
 [difftool]
     prompt = false
-    
 [difftool "meld"]
     cmd = meld "$LOCAL" "$REMOTE"
-    
+
 [merge]
     tool = meld
-    
 [mergetool "meld"]
     cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
 
-[transfer] 
-        fsckobjects = true 
-[fetch] 
-        fsckobjects = true 
-[receive] 
-        fsckObjects = true 
+[transfer]
+        fsckobjects = true
+[fetch]
+        fsckobjects = true
+[receive]
+        fsckObjects = true
   # To combat repository corruption!
   # Note: this global option applies during receive and transmit
   # https://git-scm.com/docs/git-config#git-config-transferfsckObjects
