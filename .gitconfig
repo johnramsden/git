@@ -5,6 +5,7 @@
 
 [core]
 	editor = nano
+	hooksPath = /home/john/.config/git/hooks
 
 [alias]
   hist = log --all --graph --decorate --oneline
