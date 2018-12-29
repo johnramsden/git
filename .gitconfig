@@ -1,36 +1,39 @@
+
 [user]
-	name = John Ramsden
-	email = johnramsden@riseup.net
-	signingkey = DBB4D40E
-#        signingkey = 7B49A3B5DBB4D40E
+    name = John Ramsden
+    email = johnramsden@riseup.net
+    signingkey = DBB4D40E
+
+[includeIf "gitdir:~/Workspace/Skvare/"]
+    path = .gitconfig.skvare
 
 [core]
-	editor = nano
-	hooksPath = /home/john/.config/git/hooks
+    editor = nano
+    hooksPath = ~/.config/git/hooks
 
 [alias]
-  hist = log --all --graph --decorate --oneline
-	undo-commit = reset --soft HEAD^
+    hist = log --all --graph --decorate --oneline
+    undo-commit = reset --soft HEAD^
 
 [credential]
-	helper = store
+    helper = store
 
 [commit]
-	gpgsign = true
-  # "other people can trust that the changes you've made really were made by you"
-  # https://help.github.com/articles/about-gpg/
-  # https://git-scm.com/docs/git-config#git-config-commitgpgSign
+    gpgsign = true
+    # "other people can trust that the changes you've made really were made by you"
+    # https://help.github.com/articles/about-gpg/
+    # https://git-scm.com/docs/git-config#git-config-commitgpgSign
 
 [status]
-  showUntrackedFiles = all
-  # Sometimes a newly-added folder, since it's only one line in git status, can slip under the radar.
-  # https://git-scm.com/docs/git-config#git-config-statusshowUntrackedFiles
+    showUntrackedFiles = all
+    # Sometimes a newly-added folder, since it's only one line in git status, can slip under the radar.
+    # https://git-scm.com/docs/git-config#git-config-statusshowUntrackedFiles
 
 [push]
-	default = simple
+    default = simple
 
 [diff]
-	tool = meld
+    tool = meld
 [difftool]
     prompt = false
 [difftool "meld"]
@@ -52,4 +55,4 @@
   # https://git-scm.com/docs/git-config#git-config-transferfsckObjects
   # via https://groups.google.com/forum/#!topic/binary-transparency/f-BI4o8HZW0
 [gpg]
-	program = gpg2
+    program = gpg2
