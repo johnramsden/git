@@ -1,9 +1,10 @@
-
 [user]
-    name = John Ramsden
-    email = johnramsden@riseup.net
-    signingkey = 030119B9BE61578E661BE8FDDCEA6E4831957CB3
- 
+    name = {{ git_name }}
+    email = {{ git_email }}
+{% if git_signingKey is defined %}
+    signingkey = {{ git_signingKey }}
+{% endif %}
+
 [includeIf "gitdir:~/Workspace/Skvare/"]
     path = ~/.gitconfig.skvare
 
@@ -12,7 +13,7 @@
 
 [core]
     editor = nano
-    hooksPath = ~/.config/git/hooks
+    hooksPath = ~/{{ git_hooksPath }}
 
 [alias]
     hist = log --all --graph --decorate --oneline
