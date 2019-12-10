@@ -2,10 +2,13 @@
 [user]
     name = John Ramsden
     email = johnramsden@riseup.net
-    signingkey = DBB4D40E
-
+    signingkey = 030119B9BE61578E661BE8FDDCEA6E4831957CB3
+ 
 [includeIf "gitdir:~/Workspace/Skvare/"]
-    path = .gitconfig.skvare
+    path = ~/.gitconfig.skvare
+
+[includeIf "gitdir:~/University/"]
+    path = ~/.gitconfig.university
 
 [core]
     editor = nano
